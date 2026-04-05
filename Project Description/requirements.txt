@@ -1,0 +1,11 @@
+torch
+torchvision
+torchaudio
+sentence-transformers
+transformers
+faiss-cpu
+pytesseract
+pdf2image
+pillow
+streamlit
+openai

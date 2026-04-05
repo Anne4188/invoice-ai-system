@@ -1,0 +1,9 @@
+training:
+  weak_label_min_conf: 0.85
+  task: merchant_norm   # or date_norm
+  base_model: google/flan-t5-small
+  output_dir: data/models/lora_merchant_norm
+
+retrieval_eval:
+  k_list: [1, 3, 5, 10]
+  relevance: same_merchant   # or duplicate_rule

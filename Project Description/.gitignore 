@@ -1,0 +1,43 @@
+
+
+# ---- Python virtual environments ----
+.venv/
+.venv*/
+.venv311/
+venv/
+env/
+
+# ---- Python cache ----
+__pycache__/
+*.pyc
+*.pyo
+
+# ---- OS / editor ----
+.DS_Store
+.vscode/
+.idea/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+
+# ---- Logs ----
+*.log
+
+# ---- Large raw data ----
+data/raw/
+
+# ---- Training artifacts ----
+checkpoints/
+checkpoint/
+runs/
+
+# ---- Model weights ----
+*.ckpt
+*.pt
+*.safetensors
+
+# ---- Node ----
+node_modules/
+
+# ---- Cache ----
+.cache/
