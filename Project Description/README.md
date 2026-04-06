@@ -23,51 +23,12 @@ The system combines rule-based extraction, confidence routing, LoRA fine-tuned m
 
 # System Architecture
 The system uses a layered architecture to balance accuracy, interpretability, and cost.
-
-
-Invoice Image/PDF
-        │
-        ▼
-      OCR
- (Tesseract / OCR)
-        │
-        ▼
- Regex Extraction
- merchant / date / total
-        │
-        ▼
-Confidence Scoring
- merchant_conf
-        │
-        ▼
-merchant_conf < threshold ?
-      /        \
-    YES        NO
-     │          │
-     ▼          ▼
- LoRA Model   Use regex result
-merchant normalization
-     │
-     ▼
- Optional LLM Stage
- semantic correction
-     │
-     ▼
- Structured Fields
- merchant/date/tax
-     │
-     ▼
- Embedding Encoder (CLIP)
-     │
-     ▼
- Vector Database (FAISS)
-     │
-     ▼
- Similar Invoice Retrieval
-     │
-     ▼
- Streamlit Demo Interface
-
+An invoice image or PDF is first processed by OCR to obtain text.
+A rule-based extraction module then extracts key fields such as merchant, date, and total amount, and assigns confidence scores.
+If the merchant confidence is below a threshold, a LoRA fine-tuned normalization model is triggered to correct the merchant name; otherwise the regex result is used directly.
+An optional LLM stage can further refine fields using semantic reasoning.
+The structured invoice data is then encoded into embeddings using CLIP and stored in a FAISS vector database.
+Finally, similar invoices are retrieved and all results are displayed through the Streamlit interface, enabling an end-to-end intelligent invoice processing and retrieval system.
 
 ---
 
