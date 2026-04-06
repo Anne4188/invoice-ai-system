@@ -266,10 +266,10 @@ The Streamlit interface allows users to:
 • see extracted fields
 • retrieve similar invoices
 
-![Demo](images/demo.png)
-![Demo](images/demo-2.png)
-![Demo](images/demo-3.png)
-![Demo](images/demo-4.png)
+![Demo](images/demo-1.jpeg)
+![Demo](images/demo-2.jpeg)
+![Demo](images/demo-3.jpeg)
+![Demo](images/demo-4.jpeg)
 
 
 
