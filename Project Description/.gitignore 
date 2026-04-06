@@ -41,3 +41,11 @@ node_modules/
 
 # ---- Cache ----
 .cache/
+
+.DS_Store
+*.log
+
+.DS_Store
+*.log
+.env
+.env.*
