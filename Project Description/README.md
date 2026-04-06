@@ -24,7 +24,6 @@ The system combines rule-based extraction, confidence routing, LoRA fine-tuned m
 # System Architecture
 The system uses a layered architecture to balance accuracy, interpretability, and cost.
 
-
 Invoice Image/PDF
         │
         ▼
