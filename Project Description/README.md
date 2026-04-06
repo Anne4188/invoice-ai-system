@@ -22,6 +22,7 @@ The system combines rule-based extraction, confidence routing, LoRA fine-tuned m
 ---
 
 # System Architecture
+<<<<<<< HEAD
 The system uses a layered architecture to balance accuracy, interpretability, and cost.
 An invoice image or PDF is first processed by OCR to obtain text.
 A rule-based extraction module then extracts key fields such as merchant, date, and total amount, and assigns confidence scores.
@@ -31,6 +32,12 @@ The structured invoice data is then encoded into embeddings using CLIP and store
 Finally, similar invoices are retrieved and all results are displayed through the Streamlit interface, enabling an end-to-end intelligent invoice processing and retrieval system.
 
 ---
+=======
+The system uses a layered architecture to balance accuracy, interpretability, and cost. An invoice image or PDF is first processed by OCR to obtain text. A rule-based extraction module then extracts key fields such as merchant, date, and total amount, and assigns confidence scores. If the merchant confidence is below a threshold, a LoRA fine-tuned normalization model is triggered to correct the merchant name; otherwise the regex result is used directly. An optional LLM stage can further refine fields using semantic reasoning. The structured invoice data is then encoded into embeddings using CLIP and stored in a FAISS vector database. Finally, similar invoices are retrieved and all results are displayed through the Streamlit interface, enabling an end-to-end intelligent invoice processing and retrieval system.
+
+
+
+>>>>>>> c471a73 (update files and ignore DS_Store)
 
 
 # Dataset
@@ -54,6 +61,8 @@ Weak supervision was used to generate training data for merchant normalization.
 ![X51008114321](https://github.com/user-attachments/assets/e3d0b951-770f-43a4-9bea-2473c153a657)
 ![X51008114262](https://github.com/user-attachments/assets/61f50662-d509-4a73-b49a-4feb1b639172)
 ![X51008099084](https://github.com/user-attachments/assets/88d821d2-6e89-4bbb-b82b-cd7103b622d5)
+
+
 
 
 
@@ -242,10 +251,16 @@ invoices. I built an OCR pipeline that handled images and PDFs with preprocessin
 scaling, grayscale conversion, and binarization before running Tesseract extraction. I then
 implemented rule-based field extraction and a confidence-based routing layer that decided
 whether to use rule outputs directly, refine them using a LoRA-tuned FLAN-T5 model, or fall
+<<<<<<< HEAD
 back to a stronger LLM. I also added a FAISS-based retrieval layer and evaluated it on 626 -1001 real
+=======
+back to a stronger LLM. I also added a FAISS-based retrieval layer and evaluated it on 626 ~ 1001 real
+>>>>>>> c471a73 (update files and ignore DS_Store)
 invoices, achieving Recall@1 of 0.78 and MRR of 0.83. This project helped me understand how
 to design modular pipelines, evaluate retrieval quality, and balance cost with accuracy.
 
+
+
 # Key Design Ideas
 This system follows a layered decision architecture.
 
@@ -259,13 +274,25 @@ instead of relying on a single large model.
 
 
 
-# Key Design Ideas
-This system follows a layered decision architecture.
-Rules → LoRA → LLM
 
-This provides:
-• low inference cost
-• better interpretability
-• scalable architecture
+# Demo
 
+<<<<<<< HEAD
 instead of relying on a single large model.
+=======
+The Streamlit interface allows users to:
+
+• upload invoice images
+• view OCR text
+• see extracted fields
+• retrieve similar invoices
+
+
+# Future Improvements
+
+• Layout-aware document models
+• Better multilingual OCR
+• Improved tax extraction
+• Merchant knowledge graph
+• Larger fine-tuning dataset
+>>>>>>> c471a73 (update files and ignore DS_Store)

@@ -1,36 +1,26 @@
-#!/bin/bash
-#set -euo pipefail
-
-cd /Users/anne/Desktop/invoice-multimodal-rag
-source /Users/anne/jlab/bin/activate
-#source /Users/anne/Desktop/invoice-multimodal-rag/.venv311/bin/activate
-
-
 
 echo "Python: $(which python)"
 echo "Pip:    $(which pip)"
 echo "Streamlit: $(python -m streamlit --version 2>/dev/null || echo 'no streamlit in this env')"
 
 
-# 把你的 key 填进去（只填一次就行，后面永远生效）
 # export OPENAI_API_KEY="..."
-export OPENAI_API_KEY=“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"
+export OPENAI_API_KEY= "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"
 
-# 彩虹进度条（只显示一次，2000 张发票也不会卡）
-echo "正在召唤多模态发票神器..."
+echo "Rainbow progress bar..."
 for i in {1..30}; do
-  printf "\r正在启动发票分析器... %3d%% %s" $((i*100/30)) "$(printf '█%.0s' {1..30} | cut -c1-$i)"
+  printf "\r The invoice analyzer is being started... %3d%% %s" $((i*100/30)) "$(printf '█%.0s' {1..30} | cut -c1-$i)"
   sleep 0.08
 done
-echo -e "\n神器已就位！"
+echo -e "\n Ready done！"
 
-echo "正在生成最新预测..."
+echo "The latest forecast is being generated..."
 python -m src.evaluation.run_eval_predictions
 
-echo "正在计算准确率..."
+echo "The accuracy rate is being calculated..."
 python -m src.evaluation.eval_metrics
 
-#echo "正在启动 Web 界面..."
+#echo "The Web interface is being launched..."
 #streamlit cache clear >/dev/null 2>&1 || true
 #python -m streamlit run app/streamlit_app.py --server.port=8501 --server.address=0.0.0.0 > streamlit.log 2>&1 &
 #python -m streamlit run app/streamlit_app.py --server.port=8501 --server.address=0.0.0.0
@@ -43,4 +33,4 @@ python -m src.evaluation.eval_metrics
 #sleep 4
 #open http://localhost:8501
 
-echo -e "\n全部完成！去疯狂扔发票吧！"
+echo -e "\n All done! Go and throw away the invoices crazily!"
