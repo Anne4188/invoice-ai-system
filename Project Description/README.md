@@ -127,24 +127,29 @@ MRR       = 0.83
 
 # Running the System
 1 Activate environment：
+
 cd invoice-multimodal-rag
 source ~/jlab/bin/activate
 
 2 Run extraction pipeline：
+
 PYTHONPATH=. python scripts/run_pipeline_on_ocr.py \
   --ocr_dir data/ocr/sroie2019_train \
   --out data/processed/preds_regex_lora.jsonl
 
 3 Run evaluation：
+
 python -m src.evaluation.run_eval_predictions
 python -m src.evaluation.eval_metrics
 
 4 Retrieval evaluation：
+
 PYTHONPATH=. python -m src.evaluation.ocr_eval_retrieval \
   --preds data/processed/preds_regex_lora_626.jsonl \
   --ocr_dir data/ocr/sroie2019_train
 
 5 Launch demo UI
+
 streamlit run app/streamlit_app.py
 
 
