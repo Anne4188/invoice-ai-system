@@ -266,7 +266,10 @@ The Streamlit interface allows users to:
 • see extracted fields
 • retrieve similar invoices
 
-http://localhost:8501
+![Demo](images/demo.png)
+![Demo](images/demo 2.png)
+![Demo](images/demo 3.png)
+![Demo](images/demo 4.png)
 
 
 
