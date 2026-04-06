@@ -34,7 +34,7 @@ Finally, similar invoices are retrieved and all results are displayed through th
 
 
 # Dataset
-The system was tested on 1001 real-world invoice documents.
+The system was tested on 626～1001 real-world invoice.
 Dataset characteristics:
 • noisy OCR text
 • multiple merchant formats
@@ -42,6 +42,20 @@ Dataset characteristics:
 • varying tax and currency formats
 
 Weak supervision was used to generate training data for merchant normalization.
+
+![ADVANCO_17](https://github.com/user-attachments/assets/65be47f7-7388-41e7-9736-2198cb957419)
+![invoice_04](https://github.com/user-attachments/assets/8fc1b458-adb5-45dd-a41b-fc3cafc8fe21)
+![invoice_02](https://github.com/user-attachments/assets/30380e5c-c9d7-4f88-94d4-2ff9950c91bc)
+![BHD_16](https://github.com/user-attachments/assets/97c308eb-414a-438f-9ca6-055dd91a2f59)
+![X51008145505](https://github.com/user-attachments/assets/02971ac0-d04b-4975-85d8-fde06ca3f3c3)
+![X51008164524](https://github.com/user-attachments/assets/c79f5e14-9b29-468c-8574-c264c371d39f)
+![X51008142061](https://github.com/user-attachments/assets/fecf3721-6e20-47e0-9cb2-a23b4f9cc1af)
+![X51008123599](https://github.com/user-attachments/assets/561a968f-3b18-4eeb-8da3-7ce7bbb0e1eb)
+![X51008114321](https://github.com/user-attachments/assets/e3d0b951-770f-43a4-9bea-2473c153a657)
+![X51008114262](https://github.com/user-attachments/assets/61f50662-d509-4a73-b49a-4feb1b639172)
+![X51008099084](https://github.com/user-attachments/assets/88d821d2-6e89-4bbb-b82b-cd7103b622d5)
+
+
 
 
 # Weak Supervision Pipeline
@@ -223,7 +237,7 @@ invoices. I built an OCR pipeline that handled images and PDFs with preprocessin
 scaling, grayscale conversion, and binarization before running Tesseract extraction. I then
 implemented rule-based field extraction and a confidence-based routing layer that decided
 whether to use rule outputs directly, refine them using a LoRA-tuned FLAN-T5 model, or fall
-back to a stronger LLM. I also added a FAISS-based retrieval layer and evaluated it on 622 -1001 real
+back to a stronger LLM. I also added a FAISS-based retrieval layer and evaluated it on 626 -1001 real
 invoices, achieving Recall@1 of 0.78 and MRR of 0.83. This project helped me understand how
 to design modular pipelines, evaluate retrieval quality, and balance cost with accuracy.
 
