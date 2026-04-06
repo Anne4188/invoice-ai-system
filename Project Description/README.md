@@ -267,9 +267,9 @@ The Streamlit interface allows users to:
 • retrieve similar invoices
 
 ![Demo](images/demo.png)
-![Demo](images/demo 2.png)
-![Demo](images/demo 3.png)
-![Demo](images/demo 4.png)
+![Demo](images/demo-2.png)
+![Demo](images/demo-3.png)
+![Demo](images/demo-4.png)
 
 
 
