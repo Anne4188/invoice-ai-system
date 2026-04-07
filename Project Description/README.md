@@ -251,8 +251,16 @@ to design modular pipelines, evaluate retrieval quality, and balance cost with a
 
 
 
+
 # Key Design Ideas
 This system follows a layered decision architecture.
+1）test regex + LoRA only:
+![Demo](images/regex + LoRA only.jpeg)
+
+
+2）test regex + LoRA + LLM
+![Demo](images/regex + LoRA + LLM.jpeg)
+
 
 Rules → LoRA → LLM
 This provides:
@@ -260,7 +268,8 @@ This provides:
 • better interpretability
 • scalable architecture
 
-instead of relying on a single large model.
+To reduce cost, my pipeline is not designed to send every invoice directly to a large LLM. Instead, it follows a layered decision strategy. It first performs regex-based extraction, then applies LoRA-based refinement for low-confidence cases, and only optionally escalates to a stronger LLM as a fallback. During evaluation, I compare two configurations: regex + LoRA only and regex + LoRA + LLM, allowing me to measure both the quality improvement and the cost trade-off.
+
 
 
 
