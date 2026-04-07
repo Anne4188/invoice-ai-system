@@ -66,6 +66,9 @@ weak label cleaning
 ↓  
 LoRA fine-tuning dataset  
 
+![Demo](images/clean-weak-labels.jpeg)
+
+
 
 
 # LoRA Merchant Normalization
@@ -82,6 +85,9 @@ merchant = "WALMART"
 
 The model only runs when: merchant_conf < threshold
 This design reduces inference cost and preserves rule-based interpretability.
+
+![Demo](images/LoRA-1.jpeg)
+
 
 
 
@@ -117,6 +123,8 @@ Recall@3  = 0.87
 Recall@5  = 0.89  
 Recall@10 = 0.92  
 MRR       = 0.83  
+
+![Demo](images/Recall@K.jpeg)
 
 
 
