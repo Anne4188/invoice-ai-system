@@ -5,7 +5,6 @@ echo "Streamlit: $(python -m streamlit --version 2>/dev/null || echo 'no streaml
 
 
 # export OPENAI_API_KEY="..."
-export OPENAI_API_KEY= "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"
 
 echo "Rainbow progress bar..."
 for i in {1..30}; do
