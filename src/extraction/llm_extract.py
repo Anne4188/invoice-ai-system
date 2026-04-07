@@ -66,7 +66,7 @@ Please note:
   -If a field cannot be found anywhere in the OCR text, set it to null.
   -For monetary amounts, convert them to numeric type (float) without currency symbols.
   -Convert the date to YYYY-MM-DD format whenever possible; if the exact format cannot be determined, use the original date string.
-  -If you find an obvious inconsistency between total_amount and tax, make a reasonable correction based on the context.
+  -If i find an obvious inconsistency between total_amount and tax, make a reasonable correction based on the context.
     
 Please output strictly according to the following JSON schema. Do not add any extra fields, and do not output any text outside the JSON.
 
