@@ -254,12 +254,16 @@ to design modular pipelines, evaluate retrieval quality, and balance cost with a
 
 # Key Design Ideas
 This system follows a layered decision architecture.
+
 1）test regex + LoRA only:
-![Demo](images/regex+LoRAonly.jpeg)
+
+![Regex + LoRA](images/regex-lora-only.jpeg)
+
 
 
 2）test regex+LoRA+LLM
-![Demo](images/regex+LoRA+LLM.jpeg)
+
+![Regex + LoRA + LLM](images/regex-lora-llm.jpeg)
 
 
 Rules → LoRA → LLM
