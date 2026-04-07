@@ -282,12 +282,12 @@ MERCHANT_PATTERNS = {
 
 def extract_merchant_with_conf(text: str) -> Tuple[Optional[str], float, Dict[str, Any]]:
     """
-    返回 (merchant_candidate, confidence, meta)
-    confidence 经验规则：
-    - HARD keyword 命中：0.95
-    - INVOICE 窗口内 best_score 高：0.85~0.92
-    - 全局 best_score 一般：0.60~0.80
-    - 无：0.0
+    return (merchant_candidate, confidence, meta)
+    confidence rules：
+    - HARD keyword：0.95
+    - INVOICE window best_score ：0.85~0.92
+    - best_score ：0.60~0.80
+    - none：0.0
     """
     lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
     if not lines:

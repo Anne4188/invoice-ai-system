@@ -17,8 +17,7 @@ def main():
     refined = 0
     blocked = 0
 
-    # “changed”需要对比 base vs final，所以这里要求你在 preds 里有 base_merchant 字段
-    # 如果你当前 run_pipeline_on_ocr.py 没写 base_merchant，也没关系：先输出触发率+refined_by
+    
     changed = 0
     has_base = False
 

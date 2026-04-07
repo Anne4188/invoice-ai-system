@@ -52,8 +52,8 @@ def main():
             }
             out_f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
-    print(f"✅ Done, predictions saved to {OUTPUT_PATH}")
-    print(f"✅ Mode: {'regex + LoRA + LLM' if use_llm else 'regex + LoRA only'}")
+    print(f"Done, predictions saved to {OUTPUT_PATH}")
+    print(f"Mode: {'regex + LoRA + LLM' if use_llm else 'regex + LoRA only'}")
 
 #--------------------------------------------------------------
 

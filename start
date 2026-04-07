@@ -6,6 +6,7 @@ echo "Streamlit: $(python -m streamlit --version 2>/dev/null || echo 'no streaml
 
 # export OPENAI_API_KEY="..."
 
+
 echo "Rainbow progress bar..."
 for i in {1..30}; do
   printf "\r The invoice analyzer is being started... %3d%% %s" $((i*100/30)) "$(printf '█%.0s' {1..30} | cut -c1-$i)"
