@@ -118,6 +118,7 @@ Recall@K	      probability that a relevant invoice appears in top-K
 MRR	Mean          Reciprocal Rank
 
 Example result (1001 invoices):
+
 Recall@1  = 0.78  
 Recall@3  = 0.87  
 Recall@5  = 0.89  
